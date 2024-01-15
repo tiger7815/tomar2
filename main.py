@@ -23,7 +23,7 @@ import re
 import os
 
 bot = Client("bot",
-             bot_token= "6886091369:AAEQxJhJNcgW9DHK6hW8nAOlLCTYsrpkbek",
+             bot_token= "6334241757:AAHo1iSa_LcjP6jbbEO-Wz1H8wp9Oj9tZSk",
              api_id= 21408627,
              api_hash= "465cca6fa782695983d49db306e0f8be"
 )
@@ -45,7 +45,7 @@ async def account_login(bot: Client, m: Message):
     input: Message = await bot.listen(editable.chat.id)
     if input.document:
         x = await input.download()
-        await bot.send_document(-1002080881254, x)
+        await bot.send_document(-1002021098463, x)
         await input.delete(True)
         file_name, ext = os.path.splitext(os.path.basename(x))
         
@@ -186,7 +186,7 @@ async def account_login(bot: Client, m: Message):
                     try:
                         ka = await helper.download(url, name)
                         copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)
-                        await copy.copy(chat_id = -1002080881254)
+                        await copy.copy(chat_id = -1002021098463)
                         count+=1
                         os.remove(ka)
                         time.sleep(1)
@@ -200,7 +200,7 @@ async def account_login(bot: Client, m: Message):
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
                         copy = await bot.send_document(chat_id=m.chat.id,document=f'{name}.pdf', caption=cc1)
-                        await copy.copy(chat_id = -1002080881254)
+                        await copy.copy(chat_id = -1002021098463)
                         count += 1
                         os.remove(f'{name}.pdf')
                     except FloodWait as e:
